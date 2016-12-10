@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>评估列表</title>
+	<meta charset="gbk">
+</head>
+<body>
+	<h3>未评估老师:</h3>
+	{% for name in notPg %}
+		<div>
+			<span>{{ name[2] }}</span>
+			<span>           </span>
+			<span>          {{ name[4] }}</span>
+			<a href="/toEval?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">评估</a>
+		</div><br>
+	{% end %}
+
+	<h3>已评估老师</h3>
+	{% for name in hadPg %}
+		<div>
+			<span>{{ name[2] }}</span>
+			<span>           </span>
+			<span>          {{ name[4] }}</span>
+			<a href="/EvalResult?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">查看</a>
+		</div><br>
+	{% end %}
+</body>
+</html>

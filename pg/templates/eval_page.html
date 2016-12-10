@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>评估页面</title>
+	<meta charset="gbk">
+</head>
+<body>
+	<form method="POST" action="/toEval">
+		<input type="hidden" name="wjbm" value={{wjbm}}>
+		<input type="hidden" name="bpr"  value={{bpr}}>
+		<input type="hidden" name="pgnr" value={{pgnr}}>
+		<input type="hidden" name="xumanyzg" value="zg">	
+		<div>
+			<h3>教学态度</h3>
+			<label><input type="radio" name="one" value="6_1">优秀</label>
+			<label><input type="radio" name="one" value="6_0.83">良好</label>
+			<label><input type="radio" name="one" value="6_0.67">中</label>
+			<label><input type="radio" name="one" value="6_0.5">及格</label>
+			<label><input type="radio" name="one" value="6_0.33">差</label>
+		</div>
+		<div>
+			<h3>教学内容</h3>
+			<label><input type="radio" name="two" value="6_1">优秀</label>
+			<label><input type="radio" name="two" value="6_0.83">良好</label>
+			<label><input type="radio" name="two" value="6_0.67">中</label>
+			<label><input type="radio" name="two" value="6_0.5">及格</label>
+			<label><input type="radio" name="two" value="6_0.33">差</label>
+		</div>
+		<div>
+			<h3>教学能力与方法</h3>
+			<label><input type="radio" name="three" value="6_1">优秀</label>
+			<label><input type="radio" name="three" value="6_0.83">良好</label>
+			<label><input type="radio" name="three" value="6_0.67">中</label>
+			<label><input type="radio" name="three" value="6_0.5">及格</label>
+			<label><input type="radio" name="three" value="6_0.33">差</label>
+		</div>
+		<div>
+			<h3>教学效果</h3>
+			<label><input type="radio" name="four" value="6_1">优秀</label>
+			<label><input type="radio" name="four" value="6_0.83">良好</label>
+			<label><input type="radio" name="four" value="6_0.67">中</label>
+			<label><input type="radio" name="four" value="6_0.5">及格</label>
+			<label><input type="radio" name="four" value="6_0.33">差</label>
+		</div>
+		<div>
+			<h3>教学艺术</h3>
+			<label><input type="radio" name="zero" value="5_1">优秀</label>
+			<label><input type="radio" name="zero" value="5_0.83">良好</label>
+			<label><input type="radio" name="zero" value="5_0.67">中</label>
+			<label><input type="radio" name="zero" value="5_0.5">及格</label>
+			<label><input type="radio" name="zero" value="5_0.33">差</label>
+		</div>
+		<textarea name="zgpj" rows="10" cols="150"></textarea>
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>
