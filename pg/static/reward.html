@@ -2,27 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script>
- !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
-</script>
-<!-- <meta content="width=device-width, initial-scale=0.5, maximum-scale=0.7, user-scalable=0" name="viewport"> -->    
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script>
 <meta content="yes" name="apple-mobile-web-app-capable">
-<script src="/static/jquery.js"></script>
-<link href="/static/css/login.css" rel="stylesheet">
-<title>登陆</title>
+<link href="css/reward.css" rel="stylesheet">
+<script src="jquery.js"></script>
+<title>支付</title>
 </head>
 
 <body>
-<!--header-->
 <div class="header">
-	<h1>大同学塘教学评估</h1>
+	<h1>大同学塘</h1>
+	<a class="back" href="/list"><img src="img/back.png"></a>
 </div>
-
-<form class="login_form" action="/login" method="POST">
-        <div class="input_list input_list1"><input type="text" name="zjh" placeholder="学号"></div>
-        <div class="input_list input_list2"><input type="password" name="mm" placeholder="密码"></div>
-        <input type="submit" value="确定">
-</form>
+<div class="reward">
+    <img src="img/erweima.jpg">
+    <h1>扫二维码向我支付</h1>
+</div>
 <a class="copyright" style="position:relative;top:3.5rem;color:#808080;" href="https://h5.koudaitong.com/v2/tag/wpnqfdwn?redirect_count=1">
 <h1 style="text-align:center;font-size:0.3rem">Copyright©大同学塘工作室版权所有</h1>
 </a>

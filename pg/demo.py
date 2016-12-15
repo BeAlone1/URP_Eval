@@ -4,12 +4,16 @@ from   tornado.options import options,define
 import tornado.ioloop
 import os.path
 from handler import *
+import pymysql as sql
 
 define("port", default=8899, help="run on give port", type=int)
 
 class Application(tornado.web.Application):
 	def __init__(self):
+		conn = sql.connect(host='localhost', user='root', password='root', port=3306, database='dtdx', charset='utf8')
+		self.db = conn
 		handlers = [
+			(r'/', Index),
 			(r'/login', login),
 			(r'/list', tlist),
 			(r'/toEval', toEval),

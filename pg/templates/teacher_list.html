@@ -1,28 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title>评估列表</title>
-	<meta charset="gbk">
+<meta charset="utf-8">
+<script>
+ !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);
+</script>
+<!-- <meta content="width=device-width, initial-scale=0.5, maximum-scale=0.7, user-scalable=0" name="viewport"> -->      
+<meta content="yes" name="apple-mobile-web-app-capable">
+<link href="/static/css/style.css" rel="stylesheet">
+<script src="/static/jquery.js"></script>
+<title>教师列表</title>
 </head>
-<body>
-	<h3>未评估老师:</h3>
-	{% for name in notPg %}
-		<div>
-			<span>{{ name[2] }}</span>
-			<span>           </span>
-			<span>          {{ name[4] }}</span>
-			<a href="/toEval?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">评估</a>
-		</div><br>
-	{% end %}
 
-	<h3>已评估老师</h3>
-	{% for name in hadPg %}
-		<div>
-			<span>{{ name[2] }}</span>
-			<span>           </span>
-			<span>          {{ name[4] }}</span>
-			<a href="/EvalResult?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">查看</a>
-		</div><br>
-	{% end %}
+<body>
+<!--header-->
+<div class="header">
+	<h1>大同学塘教学评估</h1>
+    <a class="back" href="/login"><img src="/static/img/back.png"></a>
+	<a class="reward" href="/static/reward.html">打赏</a>
+</div>
+<!--content-->
+<div class="content">
+	<h1>待评估课程</h1>
+    <ul>
+        {% for name in notPg %}
+    	<li style="border-top:solid 1px #cccccc">
+        <a href="/toEval?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">{{ name[2] }} > {{ name[4] }}</a>
+        	<img src="/static/img/arrow.png">
+        </li>
+        {% end %}
+    </ul>
+    <h1>已评估课程</h1>
+    <ul>
+        {% for name in hadPg %}
+    	<li style="border-top:solid 1px #cccccc"><a href="/EvalResult?bpr={{name[1]}}&bprm={{name[2]}}&wjmc={{name[3]}}&wjbm={{name[0]}}&pgnrm={{name[4]}}&pgnr={{name[5]}}">{{ name[2] }} > {{ name[4] }}</a>
+        	<img src="/static/img/arrow.png">
+        </li>
+        {% end %}
+    </ul>
+</div>
+<!--footer-->
+<!--<div class="footer">
+    <a>大同学塘INFO</a>
+</div>
+<div class="info">
+    	<h1>长按二维码关注</h1>
+        <img src="img/erweima.png">
+        <input class="close" type="button" value="关闭">
+</div>-->
+
+<script>
+var XC = {};
+$(function(){
+var body_w = 640;
+
+function adjustWindowLt640() {
+    var IFO = {};
+    IFO.windw = $(window).width();
+    IFO.bodyw = body_w;
+    IFO.scale = Math.ceil(1000 * IFO.windw / IFO.bodyw) / 1000;
+    IFO.str = "width=device-width, initial-scale=" + IFO.scale + ", minimum-scale=" + IFO.scale + ",maximum-scale=" + IFO.scale + ", user-scalable=no";
+    $('meta[name=viewport]').attr('content', IFO.str)
+}
+
+function adjustWindowGt640() {
+    var viewport = document.querySelector("meta[name=viewport]");
+    var winWidths = $(window).width();
+    var densityDpi = body_w / winWidths;
+    densityDpi = densityDpi > 1 ? 300 * body_w * densityDpi / body_w : densityDpi;
+    if (isWeixin()) {
+        viewport.setAttribute('content', 'width=' + body_w + ', target-densityDpi=' + densityDpi + ', maximum-scale=' + 1 + ', user-scalable=no')
+    } else {
+        viewport.setAttribute('content', 'width=' + body_w + ', user-scalable=no')
+    }
+}
+
+function isWeixin() {
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adjustScreen() {
+    if ($(window).width() < 640) {
+        adjustWindowLt640()
+    } else if ($(window).width() > 639) {
+        adjustWindowGt640()
+    }
+}
+adjustScreen();
+
+/*$(".close").click(
+	function(){
+	$(".info").addClass("show")
+	}
+)*/
+</script>
 </body>
 </html>

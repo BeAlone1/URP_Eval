@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;font-size:0.36rem;font-family:"微软雅黑"}
+a{text-decoration:none;color:#18b4ed;}
+h1,h2,h3{font-weight:normal;margin:0}
+li{list-style:none}
+body{width: 100%;
+     margin:auto;
+     position: relative;
+     overflow-x: hidden;
+	 background-color:#f8f8f8}
+/*footer*/
+.header{width:100%;background-color:#16A2DD;overflow-x:hidden;position:relative}
+.header h1{color:white;text-align:center;line-height:0.88rem;display:block;margin:auto}
+.form{width:6rem;margin:auto;}
+/*form*/
+.login_form{
+    width: 5.8rem;
+    margin:auto;
+}
+
+.login_form .input_list{
+    height: 0.8rem;
+    width: 5.78rem;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+    border-radius: 0.08rem;
+    border:0.01rem #e6e6e6 solid;
+}
+.login_form .input_list1{
+    background: #e6e6e6 url(../img/pro.png) 0.25rem 0.16rem no-repeat ;margin-top:0.6rem
+}
+.login_form .input_list2{
+    background: #e6e6e6 url(../img/lock.png) 0.25rem 0.16rem no-repeat ;
+}
+.input_list input{
+    width: 4.83rem;
+    height: 0.78rem;
+    font-size: 0.28rem;
+    color: #808080;
+    outline: none;
+    position: relative;
+    left: 0.95rem;
+    border:none;
+    text-indent: 0.3rem;
+}
+.input_list ::-moz-placeholder {
+    text-indent: 0.3rem;
+    opacity: 1!important;
+}
+.input_list :-ms-input-placeholder {
+    text-indent: 0.3rem;
+}
+.input_list ::-webkit-input-placeholder {
+    text-indent: 0.3rem;
+}
+.login_form input[type=submit]{
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 0.08rem;
+    border:none;
+    cursor: pointer;
+    font-size: 0.28rem;
+    color: #fff;
+    background: #16A2DD;
+}
